@@ -1,0 +1,10 @@
+Proposal
+
+The implemented solution is slow , to process a transfer it executes
+4 DB operations.
+
+In order to speed up the processing an approach is to store the available amounts,
+the transactions in memory structures (redis or something similar) and to use a thread pool
+to do the DB operations.
+When the request for payment is received it is validated and after that is queued and executed in the background
+The request is removed from the queue after it is successfully processed by the db

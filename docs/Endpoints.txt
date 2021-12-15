@@ -1,0 +1,32 @@
+
+Endpoints
+
+1)GET /funds?userid=xxx
+Retrieve the balance for the given userid
+
+2)POST /transfer
+Transfers money from source to destination
+
+Headers:
+key - identifier for the request.It has a random value and it  should be unique per transaction
+
+Body:
+{
+    "source": id1
+    "destination": id2
+    "amount": xxx
+}
+
+Response:
+Notification message that the transfer was done
+
+3)GET /transactions?userid=xxx
+Displays transactions done/received by a user
+
+Response:
+Array containing the transactions for the user in the format:
+{
+    "source": id1
+    "destination": id2
+    "amount": xxx
+}

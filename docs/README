@@ -1,0 +1,25 @@
+1. Unzip the archive
+
+2. Build the application
+`go build`
+
+3. Configure the database
+In config.yaml file there is the configuration for MySql connection
+The file should be updated with the mysql configuration. It requires 5 fields (my local config is below)
+```yaml
+host: localhost
+port: 3306
+user: root
+password: ""
+database: payments
+```
+
+4. Run the sql script to populate test tables
+mysql -u root -p < sql_scripts.sql
+
+5. Start the application
+./intive config.yaml
+
+6. Run postman (or another tool)
+Add basic authentication (User:test, password:test)
+
