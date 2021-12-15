@@ -1,4 +1,5 @@
-1. Unzip the archive
+1. Clone the application:
+git clone https://github.com/turtoiv/intive.git
 
 2. Build the application
 `go build`
